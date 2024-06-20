@@ -36,7 +36,8 @@ const LoginForm = () => {
     try {
       const { user, error: loginError } = await login(
         data.email,
-        data.password
+        data.password,
+        { remember: checked } // Pass the 'remember' option to the login function
       );
       if (loginError) {
         throw loginError;
@@ -98,6 +99,7 @@ const LoginForm = () => {
       }
 
       // Redirect based on whether the form has been filled or not
+
       if (formFilled) {
         router.push('/profile');
       } else {

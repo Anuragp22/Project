@@ -25,7 +25,7 @@ import Loading from '@/components/Loading';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import useNavbarType from '@/hooks/useNavbarType';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAuth } from '@/context/AuthContext';
+import useUserDetails from '@/hooks/useUserDetails';
 import { supabase } from '@/lib/supabaseclient';
 
 export default function RootLayout({ children }) {
@@ -37,7 +37,8 @@ export default function RootLayout({ children }) {
   const [navbarType] = useNavbarType();
   const [isMonoChrome] = useMonoChrome();
   const router = useRouter();
-  const { user, loading } = useAuth();
+  const { loading } = useUserDetails();
+
   useEffect(() => {
     const checkAuthToken = async () => {
       const {
@@ -64,11 +65,9 @@ export default function RootLayout({ children }) {
       return 'ltr:ml-[248px] rtl:mr-[248px]';
     }
   };
-
   if (loading) {
     return <Loading />;
   }
-
   return (
     <div
       dir={isRtl ? 'rtl' : 'ltr'}

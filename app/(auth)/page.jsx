@@ -3,6 +3,7 @@ import Link from 'next/link';
 import LoginForm from '@/components/partials/auth/login-form';
 import Social from '@/components/partials/auth/social';
 import useDarkMode from '@/hooks/useDarkMode';
+import useUserDetails from '@/hooks/useUserDetails';
 
 // image import
 
