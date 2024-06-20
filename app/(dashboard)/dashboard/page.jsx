@@ -237,7 +237,7 @@ const Ecommerce = () => {
                   text='Learn More'
                   href='/profile'
                   isLocked={locked.followInvestment}
-                  icon='heroicons:document-text'
+                  icon='heroicons:presentation-chart-line'
                 />
                 <Card_D
                   title='Sell my Shares (Secondary Shares)'
