@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/Icon';
 
-const Card_D = ({ title, text, isLocked, href }) => {
+const Card_D = ({ title, text, isLocked, href, icon }) => {
   return (
     <div className='relative group'>
       <div
@@ -15,7 +15,12 @@ const Card_D = ({ title, text, isLocked, href }) => {
             isLocked ? 'group-hover:blur-sm' : ''
           }`}
         >
-          {title}
+          <div className='flex gap-1.5 items-center justify-center '>
+            <div className='flex-none text-2xl text-slate-600 dark:text-slate-300'>
+              <Icon icon={icon} />
+            </div>
+            {title}
+          </div>
         </span>
         <Link
           href={href}
